@@ -35,7 +35,7 @@ def gen_stamp(str, font_family=None,
 
     str_list = str.split("\n")
     tspans = "\n".join([TSPAN_START + s + TSPAN_END
-                        for i, s in enumerate(str_list)])
+                        for s in str_list])
     max_unilen = max([sum([2 if unicodedata.east_asian_width(
         c) in "FWA" else 1 for c in s]) for s in str_list])
     col_num = len(str_list)
